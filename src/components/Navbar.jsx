@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 const Section = styled.div`
     display: flex;
     justify-content: center;
+    position: fixed;
 `
 
 const Container = styled.div`
@@ -12,11 +14,23 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
 `
 const Links = styled.div`
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 50px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 0;
+    }
 `
 const Icons = styled.div`
     display: flex;
@@ -27,9 +41,12 @@ const Icon = styled.img`
     width: 20px;
     cursor: pointer;
 `
-const Logo = styled.p`
-    font-size: 35px;
-    font-weight: 600;
+const Logo = styled.img`
+    width: 80px;
+    @media screen and (max-width: 768px) {
+        width: 100px;
+    }
+
 `
 const List = styled.ul`
     display: flex;
@@ -39,33 +56,59 @@ const List = styled.ul`
 const ListItem = styled.li`
     cursor: pointer;
 `
-const Button = styled.button`
-    width: 100px;
-    padding 10px;
+const Button = styled.a`
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+    }
+    width: 200px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     color: white;
-    background: #aa4ab5;
+    background: #FA4B98;
+    text-align: center;
+    text-decoration: none;
 `
+
+const LinksAnimated = motion(Links);
+const IconsAnimated = motion(Icons);
+const ButtonAnimated = motion(Button);
+const LogoAnimated = motion(Logo);
 
 const Navbar = () => {
   return (
     <Section>
         <Container>
-            <Links>
-                <Logo>Mart Nijland</Logo>
+            <LinksAnimated
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 0.5 }}
+            >
+                <LogoAnimated 
+                 whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{
+                    duration: 0.1,
+                  }}
+                src='./img/logo.png'/>
                 <List>
-                    <ListItem>Home</ListItem>
-                    <ListItem>Who</ListItem>
-                    <ListItem>Works</ListItem>
-                    <ListItem>Contact</ListItem>
                 </List>
-            </Links>
-            <Icons>
-                <Icon src="./img/search.png" ></Icon>
-                <Button>Hire me</Button>
-            </Icons>
-
+            </LinksAnimated>
+            <IconsAnimated
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 0.5 }}
+            >
+                <ButtonAnimated 
+                              whileHover={{
+                                scale: 1.1,
+                              }}
+                              transition={{
+                                duration: 0.1,
+                              }}
+                href="https://www.chupachups.nl/" target="_blank" rel="noopener noreferrer">Meer informatie</ButtonAnimated>
+            </IconsAnimated>
         </Container>
     </Section>
   )

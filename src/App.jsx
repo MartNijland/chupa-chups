@@ -12,11 +12,13 @@ const Container = styled.div`
   overflow-y: auto;
   scroll-bar-width: none;
   color: white;
-  background: url("./img/bg.jpeg");
+  background: url("./img/bg.jpg");
   &::-webkit-scrollbar {
     display: none;
   }
 `
+
+
 
 function App() {
 
