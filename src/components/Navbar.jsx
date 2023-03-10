@@ -15,6 +15,14 @@ const Container = styled.div`
     align-items: center;
     padding: 10px 0;
 
+    @media screen and (max-width: 1400px) {
+        width: 1000px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 800px;
+    }
+
     @media screen and (max-width: 768px) {
         flex-direction: column;
         width: 100%;

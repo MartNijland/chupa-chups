@@ -18,6 +18,15 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 1500px) {
+    width: 1000px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 800px;
+}
+
+
   @media screen and (max-width: 767px) {
     flex-direction: column;
     display: inline-block;
@@ -44,6 +53,10 @@ const Poppetje = styled.img`
     padding-top: 40%;
     width: 80%;
   }
+
+  @media screen and (max-width: 375px) {
+    padding-top: 80%;
+  }
 `
 
 const Heading = styled.h1`
@@ -51,6 +64,14 @@ const Heading = styled.h1`
   font-weight: 600;
   line-height: 1;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 1500px) {
+    font-size: 80px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 60px;
+  }
 
   @media screen and (max-width: 767px) {
     padding-left: 8%;
@@ -65,6 +86,10 @@ const Text = styled.p`
   padding-top: 30px;
   font-size: 20px;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 767px) {
     padding-left: 8%;

@@ -17,6 +17,14 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  
+  @media screen and (max-width: 1500px) {
+    width: 1000px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 800px;
+}
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
@@ -40,10 +48,18 @@ const Poppetje = styled.img`
   width: 130%;
   padding-left: 15%;
 
+  @media screen and (max-width: 1500px) {
+    width: 120%;
+  }
+
   @media screen and (max-width: 767px) {
     width: 90%;
     padding-right: 10%;
     padding-bottom: 20%;
+  }
+  
+  @media screen and (max-width: 375px) {
+    padding-top: -10%;
   }
 `
 
@@ -53,6 +69,14 @@ const Heading = styled.h1`
   line-height: 1.1;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
 
+  @media screen and (max-width: 1500px) {
+    font-size: 80px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 60px;
+  }
+
   @media screen and (max-width: 767px) {
     padding-top: 55%;
     padding-left: 8%;
@@ -61,12 +85,20 @@ const Heading = styled.h1`
     text-align: center;
     color: #fff;
   }
+
+  @media screen and (max-width: 375px) {
+    padding-top: 90%;
+  }
 `
 
 const Text = styled.p`
   padding-top: 30px;
   font-size: 20px;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 767px) {
     padding-left: 8%;
@@ -96,8 +128,8 @@ function Works() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         >
-        <Heading>Je bent een echte <Roze>aventurier</Roze>!</Heading>
-          <Text>Gefeliciteerd! Je hebt onze QR-code gevonden. Je bent  nu een echte aventurier! Als je nog niet genoeg hebt van het ontdekken, kijk dan snel verder! Er zijn nog veel meer verschillende smaken te vinden.</Text>
+        <Heading>Je bent een echte <Roze>avonturier</Roze>!</Heading>
+          <Text>Gefeliciteerd! Je hebt onze QR-code gevonden. Je bent  nu een echte avonturier! Als je nog niet genoeg hebt van het ontdekken, kijk dan snel verder! Er zijn nog veel meer verschillende smaken te vinden.</Text>
         </AnimatedLeft>
         <AnimatedRight
           initial={{ opacity: 0 }}

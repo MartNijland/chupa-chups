@@ -19,6 +19,14 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 1500px) {
+    width: 1000px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 800px;
+}
+
   @media screen and (max-width: 767px) {
     flex-direction: column;
     width: 100%;
@@ -52,6 +60,14 @@ const Heading = styled.h1`
   line-height: 1.1;
   font-weight: 600;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
+  
+  @media screen and (max-width: 1500px) {
+    font-size: 80px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 60px;
+  }
 
   @media screen and (max-width: 767px) {
     padding-top: 55%;
@@ -61,12 +77,21 @@ const Heading = styled.h1`
     text-align: center;
     color: #fff;
   }
+
+  @media screen and (max-width: 375px) {
+    padding-top: 90%;
+  }
+
 `
 
 const Text = styled.p`
   padding-top: 30px;
   font-size: 20px;
   text-shadow: 1px 0.5px 10px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 767px) {
     padding-left: 8%;
@@ -99,7 +124,7 @@ function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <Heading>Ontdek onze <Roze>suikervrije</Roze> en <Groen>vegan</Groen> lollies!</Heading>
+          <Heading>Ontdek onze <Roze>suikervrije</Roze> en <Groen>vegan</Groen> lolly's!</Heading>
           <Text>Onze veganistische en suikervrije lolly's zijn niet alleen lekker, maar ook gezond. We willen graag de perceptie van snoep veranderen en laten zien dat het mogelijk is om te genieten van zoete lekkernijen zonder je schuldig te voelen.</Text>
         </AnimatedLeft>
         <AnimatedRight
